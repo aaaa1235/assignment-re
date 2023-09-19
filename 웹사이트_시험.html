@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+   <style>
+      *{
+        background-color: rgb(241, 228, 209);
+      }
+      .bar{
+        display: flex;
+        align-items: center;
+        margin-top: 0;
+        justify-content: space-between;
+        top: 0;
+      }
+      #menu{
+        top: 20px;
+        width: 28px;
+        margin-left: 64px;
+        display: flex;
+      }
+      #intro{
+        text-align: center;
+        font-size: 26px;
+        font-family: 'Times New Roman', Times, serif;
+        color:rgb(122, 69, 37);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 36px;
+      }
+      #login{
+        font-size: 17px;
+        font-family: 'Times New Roman', Times, serif;
+        color:rgb(122, 69, 37);
+        border: 1px solid rgb(122, 69, 37);
+        display: flex;
+        margin-right: 64px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 17px;
+        padding-right: 17px;
+      }
+      .division-line1{
+        border: 0.5px solid rgb(122, 69, 37);
+        margin-top: 0;
+        margin-bottom: 0;
+        width: 100vw;
+      }
+      .sub-bar{
+        text-align: center;
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+        color:rgb(122, 69, 37);
+        align-items: center;
+        justify-content: center;
+        margin-left: 294px;
+        margin-right: 294px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .division-line2{
+        border: 0.5px solid rgb(122, 69, 37);
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        padding: 0;
+        width: 100vw;
+      }
+      /* 첫 페이지 */
+      .page1{
+        display: flex;
+      }
+      /* 책 표지 사진 */
+      #image1{
+        text-align: left;
+        width: 320px;
+        height: 100%;
+        margin-top: 98px;
+        margin-bottom: 0;
+        margin-left: 240px;
+        margin-right: 0;
+        padding: 0;
+        float: left;
+      }
+      /* 책 제목 */
+      #sub{
+        font-size: 48px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        color: rgb(23, 68, 23);
+        text-align: left;
+        padding-bottom: 0;
+        margin-left: 630px;
+        margin-right: 240px;
+        margin-top: 212px;
+        margin-bottom: 36px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        white-space: nowrap;
+      }
+      /* 한글 부제 */
+      #sub-title{
+        font-size: 32px;
+        font-family: 'Noto Sans';
+        font-weight: bold;
+        color: rgb(148, 106, 71);
+        padding-bottom: 0;
+        margin-left: 626px;
+        margin-top: 0;
+        margin-bottom: 16px;
+        flex-direction: column;
+        flex: 1;
+        white-space: nowrap;
+      }
+      /* 짧은 정보 글 */
+      #information{
+        font-size: 15px;
+        font-family: 'Noto Sans';
+        color: rgb(96, 77, 65);
+        margin-right: 240px;
+        margin-left: 636px;
+        margin-top: 0;
+        margin-bottom: 0;
+        flex-direction: column;
+        line-height: 24px;
+        white-space: nowrap;
+        flex: 1;
+      }
+      /* 구매 여부 */
+      #sel2{
+        font-size: 20px;
+        color: rgb(131, 91, 58);
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+        border: 1px solid rgb(148, 106, 71);
+        display: inline-block;
+        margin-bottom: 70px;
+        margin-left: 636px;
+        margin-top: 0;
+        margin-right: 232px;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        flex: 1;
+        white-space: nowrap;
+      }
+      a:link{
+        color: rgb(131, 91, 58);
+        text-decoration: none;
+      }
+      a:visited{
+        color: rgb(131, 91, 58);
+        text-decoration: none;
+      }
+      a:hover{
+        color: rgb(82, 137, 55);
+        text-decoration: underline;
+      }
+      a:active{
+        color: rgb(4, 53, 4);
+        text-decoration: underline;
+      }
+      .division-line3{
+        border: 0.5px solid rgb(122, 69, 37);
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 88px;
+        width: 100vw;
+      }
+      #title1{
+        font-size: 28px;
+        color: rgb(148, 106, 71);
+        font-family: 'Noto Sans';
+        font-weight: bold;
+        margin: 10px;
+        margin-left: 300px;
+      }
+      #para1{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 16px;
+        color: rgb(96, 77, 65);
+        text-align: justify;
+        margin: 20px;
+        margin-bottom: 60px;
+        margin-left: 300px;
+        margin-right: 300px;
+        margin-top: 14px;
+        line-height: 1.6;
+      }
+      #title2{
+        font-size: 28px;
+        color: rgb(148, 106, 71);
+        font-family: 'Noto Sans';
+        font-weight: bold;
+        margin: 10px;
+        margin-left: 300px;
+      }
+      #para2{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 16px;
+        color: rgb(96, 77, 65);
+        text-align: justify;
+        margin: 20px;
+        margin-bottom: 60px;
+        margin-left: 300px;
+        margin-right: 300px;
+        margin-top: 14px;
+        line-height: 1.6;
+      }
+      #title3{
+        font-size: 28px;
+        color: rgb(148, 106, 71);
+        font-family: 'Noto Sans';
+        font-weight: bold;
+        margin: 10px;
+        margin-left: 300px;
+      }
+      #para3{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 16px;
+        color: rgb(96, 77, 65);
+        text-align: justify;
+        margin: 20px;
+        margin-bottom: 60px;
+        margin-left: 300px;
+        margin-right: 300px;
+        margin-top: 14px;
+        line-height: 1.6;
+      }
+      #title4{
+        font-size: 28px;
+        color: rgb(148, 106, 71);
+        font-family: 'Noto Sans';
+        font-weight: bold;
+        margin: 10px;
+        margin-left: 300px;
+      }
+      #para4{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 16px;
+        color: rgb(96, 77, 65);
+        text-align: justify;
+        margin: 20px;
+        margin-bottom: 120px;
+        margin-left: 300px;
+        margin-right: 300px;
+        margin-top: 14px;
+        line-height: 1.6;
+      }
+      /* #video{
+        align-items: center;
+        justify-content: center;
+      } */
+      #small{
+        font-size: 40px;
+        font-family: 'Times New Roman', Times, serif;
+        color: rgb(70, 27, 12);
+        text-align: center;
+      }
+      .division-line4{
+        border: 0.5px solid rgb(122, 69, 37);
+        margin-bottom: 104px;
+        width: 100vw;
+      }
+      #ob_title{
+        font-size: 36px;
+        font-family: 'Noto Sans';
+        font-weight: bold;
+        text-align: center;
+        color: rgb(11, 39, 11);
+        margin: 0;
+      }
+      #ob_text{
+        font-size: 16px;
+        font-family: 'Noto Sans';
+        color: rgb(96, 77, 65);;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 80px;
+        line-height: 28px;
+        white-space: nowrap;
+      }
+      .books{
+        display: flex;
+        justify-content: space-between;
+        margin-left: 280px;
+        margin-right: 280px;
+      }
+      #book1,
+      #book2,
+      #book3,
+      #book4{
+        height: 280px;
+        margin: 0 60px 0 0;
+      }
+      .num{
+        font-size: 32px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        color: rgb(148, 106, 71);
+        margin-left: 6px;
+        margin-top: 12px;
+        margin-bottom: 0;
+      }
+      .book-title{
+        font-size: 14px;
+        font-family: 'Noto Sans';
+        font-weight: 600;
+        color: rgb(96, 77, 65);
+        margin-left: 6px;
+        margin-top: 0;
+        white-space: nowrap;
+        margin-bottom: 220px;
+      }
+   </style>
+   
+</head>
+
+<body>
+  <div class="bar">
+    <img id="menu" src="https://cdn-icons-png.flaticon.com/512/3502/3502458.png">
+    <p id="intro">Book Introduction</p>
+    <p id="login">Login</p>
+  </div>
+  <div class="division-line1"></div>
+  <div class="sub-bar">
+    <p>About Us</p>
+    <p>Post</p>
+    <p>Search</p>
+    <p>Q&A</p>
+    <p>Contact</p>
+  </div>
+
+  <div class="division-line2"></div>
+
+  <div class="page1"></div>
+
+    <img id="image1" src="https://image.yes24.com/goods/122090075/XL">
+    <p id="sub">
+      The City and Its Uncertain Walls
+    </p>
+    <p id="sub-title">"도시와 그 불확실한 벽"</p>
+    <p id="information">
+      무라카미 하루키의 책에 대한 간단한 설명을 여기에 입력하세요.무라카미 하루키의 책에<br>
+      대한 간단한 설명을 여기에 입력하세요.무라카미 하루키의 책에 대한 간단한 설명을 여기에 입력하세요.
+      <p id="sel2"><a href="https://www.yes24.com/Product/Goods/122090075">Show More →</a></p>
+    </p>
+
+  </div>
+  
+  <div class="division-line3"></div>
+  <p id="title1">무라카미 하루키는 누구인가</p>
+  <p id="para1">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+    when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  </p>
+
+  <p id="title2">책의 줄거리</p>
+  <p id="para2">
+    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+    Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and
+    going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus 
+    Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. 
+    The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced
+    below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by
+    English versions from the 1914 translation by H. Rackham.
+  </p>
+
+  <p id="title3">작가가 우리에게 말하려고 하는 것은</p>
+  <p id="para3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum
+    is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop
+    publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their
+    infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+
+  <p id="title4">책이 제시하는 삶의 방향성</p>
+  <p id="para4">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised 
+    words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden
+    in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first
+    true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which
+    looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+    </p>
+
+    <!-- 유튜브 연결 거부 문제 -->
+    <!-- <iframe id="video" src="https://youtu.be/U_uG-E7PkHE?si=4KVIp0MPV6QehR6b?autoplay=1&mute=1"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe> -->
+
+  <div class="division-line4"></div>
+  <div class="other-book">
+    <p id="ob_title">작가의 다른 책</p>
+  </div>
+  <p id="ob_text">
+    절판됐었던 상실의 시대(노르웨이의 숲)부터 꼭 읽어봐야 할 명작인 해변의 카프카까지.<br>
+    현대 일본 문학의 거장, 무라카미 하루키의 다른 베스트 셀러들도 만나보세요.
+  </p>
+
+  <div class="books">
+    <div>
+      <img id="book1" src="https://qi-b.qoo10cdn.com/partner/goods_image/7/0/0/8/356757008g.jpg">
+      <p class="num">01<br></p>
+      <p class="book-title">1Q84</p>
+    </div>
+    <div>
+      <img id="book2" src="https://image.yes24.com/goods/1469823/L">
+      <p class="num">02<br></p>
+      <p class="book-title">해변의 카프카</p>
+    </div>
+    <div>
+      <img id="book3" src="https://image.yes24.com/goods/44499829/XL">
+      <p class="num">03<br></p>
+      <p class="book-title">상실의 시대(노르웨이의 숲)</p>
+    </div>
+    <div>
+      <img id="book4" src="https://image.yes24.com/goods/43306988/XL">
+      <p class="num">04<br></p>
+      <p class="book-title">기사단장 죽이기</p>
+    </div>
+  </div>
+
+</body>
+</html>
